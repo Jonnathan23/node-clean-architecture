@@ -1,3 +1,4 @@
+import { envs } from "./config";
 import { Server } from "./presentation/server";
 
 (() => {
@@ -9,5 +10,5 @@ async function main() {
     //todo: await bnase de datos
 
     //todo: iniciar servidor
-    new Server({}).start();
+    new Server({ port: envs.PORT }).start();
 }
