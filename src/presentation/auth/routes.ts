@@ -1,18 +1,17 @@
 import { Router } from "express";
+import { AuthController } from "./auth.controller";
+
 
 
 export class AuthRouter {
 
     static get routes(): Router {
         const router = Router();
+        const controller = new AuthController();
 
         // Subrutas de autenticacion
-        router.use('/login', (req, res) => {
-            res.json('login')
-        })
-        router.use('/register', (req, res) => {
-            res.json('register')
-        })
+        router.use('/login', controller.loginUser);
+        router.use('/register', controller.registerUser);
 
         return router
     }
