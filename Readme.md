@@ -10,6 +10,9 @@ Todo lo que va a estar dentro de esta carpeta, va a ser lo más ``externo de nue
 ## Domain
 En esta carpeta van a estar como las reglas que gobiernan la aplicación, se recomienda que el código que se coloque en esta carpeta no vaya a tener dependencias externas porque romperia el círulo o restricciones que debemos tener ya que los adaptadores entre otras cosas no deberian tener ingenencia aquí.
 
+### Cracion de dtos
+
+
 
 ## Infrastructure
 Es un punto intermedio entre los dos ``presentation`` y ``domain``.
