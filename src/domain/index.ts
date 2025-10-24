@@ -3,6 +3,7 @@ export * from './datasources/auth.datasource';
 
 // dtos
 export * from './dtos/auth/register-user.dto';
+export * from './dtos/auth/login-user.dto';
 
 // repositories
 export * from './repositories/auth.repository';
@@ -15,3 +16,4 @@ export * from './errors/custom.error';
 
 // use-cases
 export * from './use-cases/auth/register-user.use-case';
+export * from './use-cases/auth/login-user.use-case';

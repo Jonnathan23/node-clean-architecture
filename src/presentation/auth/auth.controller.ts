@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { AuthRepository, CustomError, RegisterUser, RegisterUserDto } from "../../domain";
+import { AuthRepository, CustomError, LoginUser, LoginUserDto, RegisterUser, RegisterUserDto } from "../../domain";
 import { JwtAdapter } from "../../config";
 import { UserModel } from "../../data/mongodb";
 
@@ -32,7 +32,14 @@ export class AuthController {
     }
 
     loginUser = (req: Request, res: Response) => {
-        res.json('login controller')
+        const [error, loginUserDto] = LoginUserDto.login(req.body)
+        if (error) {
+            return res.status(400).json({ error })
+        }
+
+        new LoginUser(this.authRepository).execute(loginUserDto!)
+            .then((user) => res.json(user))
+            .catch((error) => this.handleError(error, res))
     }
 
     getUsers = (req: Request, res: Response) => {
