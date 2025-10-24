@@ -12,3 +12,6 @@ export * from './entities/user.entity';
 
 // errors
 export * from './errors/custom.error';
+
+// use-cases
+export * from './use-cases/auth/register-user.use-case';
