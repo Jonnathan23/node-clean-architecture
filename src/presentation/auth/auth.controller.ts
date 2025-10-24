@@ -29,7 +29,7 @@ export class AuthController {
             .then(async (user) => {
                 res.json({
                     user,
-                    token: await JwtAdapter.generateToken({ id: user.id })
+                    token: await JwtAdapter.generateToken({ email: user.email, id: user.id })
                 })
             })
             .catch((error) => this.handleError(error, res))
@@ -42,7 +42,11 @@ export class AuthController {
 
     getUsers = (req: Request, res: Response) => {
         UserModel.find()
-            .then((users) => res.json(users))
+            .then((users) => res.json({
+                // users,
+                token: req.user
+
+            }))
             .catch((error) => this.handleError(error, res))
 
     }
