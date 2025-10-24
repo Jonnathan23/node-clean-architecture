@@ -6,7 +6,7 @@ const UserSchema = new Schema({
     password: { type: String, required: [true, 'Password is required'] },
 
     img: { type: String },
-    role: {
+    roles: {
         type: [String],
         required: true,
         default: ['USER_ROLE'],
