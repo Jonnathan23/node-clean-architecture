@@ -13,6 +13,7 @@ interface UserToken {
 }
 
 
+type signTokenFunction = () => void
 
 interface RegisterUserUseCase {
     execute(registerUserDto: RegisterUserDto): Promise<UserToken>;

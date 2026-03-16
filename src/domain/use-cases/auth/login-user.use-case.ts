@@ -9,6 +9,7 @@ interface UserToken {
         name: string,
         email: string
     }
+    
 }
 
 interface LoginUserUseCase {
@@ -20,6 +21,7 @@ export class LoginUser implements LoginUserUseCase {
         private readonly authRepository: AuthRepository,
         private readonly signToken = JwtAdapter.generateToken
     ) { }
+    
     async execute(loginUserDto: LoginUserDto): Promise<UserToken> {
         const user = await this.authRepository.login(loginUserDto)
 

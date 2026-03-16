@@ -8,7 +8,8 @@ export class AppRouter {
         const router = Router();
 
         // Definir rutas prinicipales
-        router.use('/api/auth', AuthRouter.routes )
+        router.use('/api/auth', AuthRouter.routes )        
+        //http://localhost:3100/api/auth
 
         return router
     }
